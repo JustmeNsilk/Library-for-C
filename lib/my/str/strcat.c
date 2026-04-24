@@ -7,7 +7,7 @@
 
 #include "str.h"
 
-char *my_strcat(char *dest, char const *src)
+char *my_strcat(char *dest, char const *src, int type)
 {
     int len_dest = my_strlen(dest);
     int len_src = my_strlen(src);
@@ -20,6 +20,7 @@ char *my_strcat(char *dest, char const *src)
     for (int i = 0; src[i] != '\0'; i++)
         new_dest[len_dest + i] = src[i];
     new_dest[len_dest + len_src] = '\0';
-    free(dest);
+    if (type == HEAP)
+        free(dest);
     return new_dest;
 }

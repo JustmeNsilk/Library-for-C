@@ -18,6 +18,8 @@
     #define STDIN 0
     #define STDOUT 1
     #define STDERR 2
+    #define HEAP 0
+    #define STACK 1
 
 //---FUNCTIONS---//
 int my_putchar(char c, int channel);
@@ -25,7 +27,7 @@ int my_putstr(char const *str, int channel);
 int my_count_word(char const *str, char const c);
 char **str_wrd_array(char const *str, char const delim);
 void free_array(char **buffer);
-char *my_strcat(char *dest, char const *src);
+char *my_strcat(char *dest, char const *src, int type);
 int my_strlen(char const *str);
 int my_strncmp(char const *key, char const *ref, int option);
 int my_strcmp(char const *key, char const *ref);

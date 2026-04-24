@@ -14,5 +14,5 @@ Test(utils, validcat_test)
     char const *str = " World!";
     char *final = "Hello";
 
-    cr_assert_str_eq(my_strcat(final, str), "Hello World!");
+    cr_assert_str_eq(my_strcat(final, str, STACK), "Hello World!");
 }
