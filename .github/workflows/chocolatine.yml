@@ -1,0 +1,85 @@
+on: 
+  push:
+    branches-ignore:
+      - 'no-ga/**'
+  pull_request:
+    branches-ignore:
+      - 'no-ga/**'
+
+env:
+  MIRROR_SSH_URL: git@github.com:EpitechPGE1-2025/G-DOP-200-BDX-2-1-chocolatine-1.git
+  EXECUTABLES: "compiler"
+
+jobs:
+  check_compilation_and_coding_style:
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker:latest
+    steps:
+      - name: fetch files
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: launche banana-check
+        run: |
+          banana-check-repo
+          if ! [ -s "coding-style-reports.log" ]; then
+            exit 0
+          fi
+          exit 1
+
+      - name: compilation
+        run: |
+          make
+          make clean
+        timeout-minutes: 2
+
+      - name: check for EXECUTABLES
+        shell: bash
+        run: |
+          export EXEC=${{ env.EXECUTABLES }};
+          for index in ${EXEC//,/ };
+          do
+            if ! [ -x "$index" ]; then
+              echo "executable not found"
+              exit 1
+            fi
+          done
+
+  unit_tests:
+    needs: [check_compilation_and_coding_style]
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker:latest
+    steps:
+      - name: fetch files
+        uses: actions/checkout@v6
+
+      - name: run unit_tests
+        run: make tests_run
+        timeout-minutes: 2
+
+
+  push_to_mirror:
+    needs: [check_compilation_and_coding_style, unit_tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the repository
+        run: |
+          export MIRROR_HTTPS_URL=$(echo ${{ env.MIRROR_URL }} | sed -e 's/:/\//' -e 's/git@/https:\/\//' -e 's/\.git$//')
+            if [ "$MIRROR_HTTPS_URL" == $(eval git remote get-url origin) ]; then
+              echo "::error title=This is the mirror one::"
+              exit 1
+            fi
+
+      - name: fetch files
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: mirror_push
+        uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            ${{  env.MIRROR_SSH_URL  }}
+          ssh_private_key:
+            ${{ secrets.GIT_SSH_PRIVATE_KEY }}

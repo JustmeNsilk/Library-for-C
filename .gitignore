@@ -1,0 +1,10 @@
+unit_tests
+libmy.a
+*.gcno
+*.gcda
+*.pch
+*.o
+*.~
+*.#
+
+compiler
