@@ -10,10 +10,5 @@
 
 int main(void)
 {
-    char const *str = "Hello my name is chiki, CHIKI, CHIkI, ChIKI Wow";
-    char **buffer = str_wrd_array(str, ' ');
-
-    print_array(buffer);
-    free_array(buffer);
     return SUCCESS;
 }

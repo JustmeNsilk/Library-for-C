@@ -22,10 +22,10 @@ jobs:
       - name: launche banana-check
         run: |
           banana-check-repo
-          if ! [ -s "coding-style-reports.log" ]; then
-            exit 0
-          fi
-          exit 1
+
+      - name: Check for errors
+        run: |
+          (make re CC=epiclang 2>&1 || true) | awk -F': ' '{print "::error file="$1"::"$2}'
 
       - name: compilation
         run: |
