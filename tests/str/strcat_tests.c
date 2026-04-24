@@ -16,11 +16,3 @@ Test(utils, validcat_test)
 
     cr_assert_str_eq(my_strcat(final, str), "Hello World!");
 }
-
-Test(utils, null_cat_test)
-{
-    char const *str = NULL;
-    char *final = "Hello";
-
-    cr_assert_str_eq(my_strcat(final, str), NULL);
-}

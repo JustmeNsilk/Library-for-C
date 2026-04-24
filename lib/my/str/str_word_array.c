@@ -18,15 +18,6 @@ void free_array(char **buffer)
     free(buffer);
 }
 
-void print_array(char **buffer)
-{
-    if (!buffer)
-        return;
-    for (int idx = 0; buffer[idx]; idx++){
-        printf("arg %d : %s\n", idx, buffer[idx]);
-    }
-}
-
 static
 void move_idx(int *idx, char const *str, char const delim)
 {
@@ -72,7 +63,8 @@ char **str_wrd_array(char const *str, char const delim)
             index--;
         }
     }
-    buffer[count - index] = allow_mem(&str[chckpnt], chckpnt, idx);
+    if (str[idx - 1] != delim)
+        buffer[count - index] = allow_mem(&str[chckpnt], chckpnt, idx);
     buffer[count] = NULL;
     return buffer;
 }

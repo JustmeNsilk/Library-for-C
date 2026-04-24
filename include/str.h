@@ -25,7 +25,6 @@ int my_putstr(char const *str, int channel);
 int my_count_word(char const *str, char const c);
 char **str_wrd_array(char const *str, char const delim);
 void free_array(char **buffer);
-void print_array(char **buffer);
 char *my_strcat(char *dest, char const *src);
 int my_strlen(char const *str);
 int my_strncmp(char const *key, char const *ref, int option);

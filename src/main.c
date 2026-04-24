@@ -5,9 +5,16 @@
 ** main.c
 */
 
-#include "macro.h"
+#include "str.h"
+#include <stdio.h>
 
 int main(void)
 {
+    char const *str = " World!";
+    char *str2 = malloc(sizeof(char) * my_strlen("Hello"));
+
+    str2 = hello;
+    str2 = my_strcat(str2, str);
+    printf("%s\n", str2);
     return SUCCESS;
 }
