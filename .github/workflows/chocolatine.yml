@@ -7,7 +7,6 @@ on:
       - 'no-ga/**'
 
 env:
-  MIRROR_SSH_URL: git@github.com:EpitechPGE1-2025/G-DOP-200-BDX-2-1-chocolatine-1.git
   EXECUTABLES: "compiler"
 
 jobs:
@@ -57,29 +56,3 @@ jobs:
       - name: run unit_tests
         run: make tests_run
         timeout-minutes: 2
-
-
-  push_to_mirror:
-    needs: [check_compilation_and_coding_style, unit_tests]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check the repository
-        run: |
-          export MIRROR_HTTPS_URL=$(echo ${{ env.MIRROR_URL }} | sed -e 's/:/\//' -e 's/git@/https:\/\//' -e 's/\.git$//')
-            if [ "$MIRROR_HTTPS_URL" == $(eval git remote get-url origin) ]; then
-              echo "::error title=This is the mirror one::"
-              exit 1
-            fi
-
-      - name: fetch files
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: mirror_push
-        uses: pixta-dev/repository-mirroring-action@v1
-        with:
-          target_repo_url:
-            ${{  env.MIRROR_SSH_URL  }}
-          ssh_private_key:
-            ${{ secrets.GIT_SSH_PRIVATE_KEY }}
