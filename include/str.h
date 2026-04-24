@@ -18,9 +18,6 @@
     #define STDIN 0
     #define STDOUT 1
     #define STDERR 2
-    #define DECIMAL "0123456789"
-    #define HEXA "01456789ABCDEF"
-    #define BIN "01"
 
 //---FUNCTIONS---//
 int my_putchar(char c, int channel);

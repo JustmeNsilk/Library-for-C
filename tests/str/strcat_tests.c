@@ -5,8 +5,8 @@
 ** putnbr_tests.c
 */
 
-#include <criterion/criterion.h>
-#include "my.h"
+#include "crit.h"
+#include "str.h"
 
 
 Test(utils, validcat_test)
@@ -23,4 +23,4 @@ Test(utils, null_cat_test)
     char *final = "Hello";
 
     cr_assert_str_eq(my_strcat(final, str), NULL);
-}v
+}

@@ -5,8 +5,7 @@
 ** putnbr_tests.c
 */
 
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
+#include "crit.h"
 
 void redirect_all_stdout(void)
 {

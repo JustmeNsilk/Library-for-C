@@ -5,17 +5,14 @@
 ** test_lib.c
 */
 
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
 #include "crit.h"
-#include "my.h"
-#include "macro.h"
+#include "str.h"
 
 Test(utils, nullprint_test)
 {
     char *str = NULL;
 
-    cr_assert_eq(my_putstr(str), ERROR);
+    cr_assert_eq(my_putstr(str, STDOUT), ERROR);
 }
 
 Test(utils, null_len_test)
@@ -36,6 +33,6 @@ Test(utils, valid_print_test, .init=redirect_all_stdout)
 {
     char const *str = "Hello World!";
 
-    my_putstr(str);
+    my_putstr(str, STDOUT);
     cr_assert_stdout_eq_str(str, "");
 }

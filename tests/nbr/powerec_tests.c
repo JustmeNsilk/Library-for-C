@@ -5,8 +5,8 @@
 ** putnbr_tests.c
 */
 
-#include <criterion/criterion.h>
-#include "my.h"
+#include "crit.h"
+#include "num.h"
 
 Test(utils, power_test)
 {

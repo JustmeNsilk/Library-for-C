@@ -5,9 +5,8 @@
 ** test_lib.c
 */
 
-#include <criterion/criterion.h>
-#include "my.h"
-#include "macro.h"
+#include "crit.h"
+#include "str.h"
 
 Test(utils, count_test)
 {

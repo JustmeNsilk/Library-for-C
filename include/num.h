@@ -12,6 +12,10 @@
     #include <unistd.h>
     #include "macro.h"
 
+///---MACROS---///
+    #define DECIMAL "0123456789"
+    #define HEXA "01456789ABCDEF"
+    #define BIN "01"
 
 //---FUNCTIONS---//
 int is_num(char const letter);

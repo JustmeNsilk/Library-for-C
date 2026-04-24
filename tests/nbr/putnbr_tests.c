@@ -5,11 +5,8 @@
 ** putnbr_tests.c
 */
 
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
 #include "crit.h"
-#include "macro.h"
-#include "my.h"
+#include "num.h"
 
 Test(utils, valid_nbr_test, .init=redirect_all_stdout)
 {

@@ -5,11 +5,8 @@
 ** cpy_tests.c
 */
 
-#include <criterion/criterion.h>
-#include <signal.h>
-#include <stddef.h>
-#include "my.h"
-#include "macro.h"
+#include "crit.h"
+#include "str.h"
 
 Test(utils, ncpy_valid_test)
 {

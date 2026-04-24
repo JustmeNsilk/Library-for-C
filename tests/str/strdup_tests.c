@@ -5,10 +5,8 @@
 ** cpy_tests.c
 */
 
-#include <criterion/criterion.h>
-#include "my.h"
-#include "macro.h"
-#include <stdio.h>
+#include "crit.h"
+#include "str.h"
 
 Test(utils, dup_valid_test)
 {

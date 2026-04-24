@@ -8,6 +8,13 @@
 #ifndef CRIT
     #define CRIT
 
+///---IMPORT---//
+    #include <criterion/criterion.h>
+    #include <criterion/redirect.h>
+
+
+
+///---FUNCTIONS---//
     void redirect_all_stdout(void);
 
 #endif

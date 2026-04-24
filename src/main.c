@@ -5,8 +5,7 @@
 ** main.c
 */
 
-#include "define.h"
-#include "str.h"
+#include "macro.h"
 
 int main(void)
 {
