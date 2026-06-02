@@ -13,4 +13,3 @@ int is_num(char const letter)
         return TRUE;
     return FALSE;
 }
-

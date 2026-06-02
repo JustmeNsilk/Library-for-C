@@ -12,7 +12,7 @@ int my_count_word(char const *str, char const c)
     int idx = 1;
     int count = 0;
 
-    if (str == NULL)
+    if (!str)
         return ERROR;
     for (; str[idx] != '\0'; idx++){
         if (str[idx] == c && str[idx - 1] != c)

@@ -9,7 +9,7 @@
 
 int my_putchar(char c, int channel)
 {
-    if (write(1, &c, channel) == FAILURE)
+    if (write(channel, &c, 1) == FAILURE)
         return ERROR;
     return SUCCESS;
 }

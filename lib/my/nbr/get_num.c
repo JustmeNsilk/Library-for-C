@@ -12,6 +12,7 @@ static
 int fetch_num(char const *str)
 {
     int idx = 0;
+
     if (!str)
         return FAILURE;
 
@@ -43,9 +44,8 @@ int get_num(char const *str)
     for (; str[idx] != '\0'; idx++){
         if (is_num(str[idx]) == TRUE)
             num = make_int(&str[idx]);
-        else 
+        else
             return FAILURE;
     }
     return num;
 }
-

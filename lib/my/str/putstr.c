@@ -9,9 +9,9 @@
 
 int my_putstr(char const *str, int channel)
 {
-    if (str == NULL)
+    if (!str)
         return ERROR;
-    for (int i = 0; str[i] != '\0'; i++){
+    for (int i = 0; str[i]; i++){
         my_putchar(str[i], channel);
     }
     return SUCCESS;

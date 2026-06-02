@@ -14,6 +14,8 @@ int my_putnbr_base(int nb, char const *base)
     int c1 = 0;
     int c2 = 0;
 
+    if (!base)
+        return FAILURE;
     if (nb < 0){
         nb *= -1;
         my_putchar('-', STDOUT);
