@@ -5,7 +5,7 @@
 ** temp.c
 */
 
-#include "macro.h"
+#include "define.h"
 
 int temp(void)
 {
