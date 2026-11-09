@@ -1,4 +1,8 @@
+# Folders
 unit_tests
+.vscode
+
+# Files
 libmy.a
 *.gcno
 *.gcda
@@ -7,4 +11,5 @@ libmy.a
 *.~
 *.#
 
+# Executables
 compiler
