@@ -5,6 +5,7 @@
 ** my_putchar.c
 */
 
+#include "define.h"
 #include "str.h"
 
 int my_putchar(char c, int channel)

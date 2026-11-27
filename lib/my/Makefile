@@ -19,7 +19,7 @@ NAME 	=	libmy.a
 
 CFLAGS = "-Wall" "-Wextra" "-g3" "-Wno-unused-value"
 
-CPPFLAGS = -I../../include/
+CPPFLAGS = "-I./../../include/" $(shell find . -mindepth 1 -type d -printf "-I./%f/ ")
 
 #		-----------|		 RULES			|-----------
 

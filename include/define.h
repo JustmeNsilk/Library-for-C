@@ -9,10 +9,14 @@
     #define DEFINE
 
 ///---IMPORT---///
-    #include "macro.h"
     #include "typedef.h"
 
-///---DEFINE---///
+///---MACRO---///
+    #define SUCCESS 0
+    #define ERROR 84
+    #define FAILURE -1
+    #define TRUE 1
+    #define FALSE 0
 
 ///---FUNCTIONS---///
 

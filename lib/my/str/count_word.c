@@ -5,7 +5,7 @@
 ** count the number of word in a string with a delimiter
 */
 
-#include "str.h"
+#include "define.h"
 
 int my_count_word(char const *str, char const c)
 {
@@ -14,7 +14,7 @@ int my_count_word(char const *str, char const c)
 
     if (!str)
         return ERROR;
-    for (; str[idx] != '\0'; idx++){
+    for (; str[idx]; idx++){
         if (str[idx] == c && str[idx - 1] != c)
             count++;
     }

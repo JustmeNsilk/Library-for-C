@@ -5,7 +5,7 @@
 ** return 1 if s1 > 2, -1 if not and 0 if both are equals.
 */
 
-#include "str.h"
+#include "define.h"
 
 int my_strncmp(char const *key, char const *ref, int lenght)
 {

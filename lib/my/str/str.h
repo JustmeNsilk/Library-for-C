@@ -9,10 +9,8 @@
     #define STR
 
 //---INCLUDES---//
-    #include <unistd.h>
     #include <stdlib.h>
-    #include <stddef.h>
-    #include "macro.h"
+    #include <unistd.h>
 
 //---MACRO---//
     #define STDIN 0
@@ -21,18 +19,25 @@
     #define HEAP 0
     #define STACK 1
 
-//---FUNCTIONS---//
-int my_putchar(char c, int channel);
-int my_putstr(char const *str, int channel);
+//--------- FUNCTIONS ---------//
+
+//--- GET-INFOS ---//
 int my_count_word(char const *str, char const c);
-char **str_wrd_array(char const *str, char const delim);
-void free_array(char **buffer);
-char *my_strcat(char *dest, char const *src, int type);
 int my_strlen(char const *str);
 int my_strncmp(char const *key, char const *ref, int option);
 int my_strcmp(char const *key, char const *ref);
 char *my_strncpy(char const *copy, char *paste, int lenght);
 char *my_strcpy(char const *copy, char *paste);
+int list_array(void *const *array);
+
+//--- DISPLAY ---//
+int my_putchar(char c, int channel);
+int my_putstr(char const *str, int channel);
+
+//--- MODIFICATION ---// 
+char *my_strcat(char *dest, char const *src, int type);
+char **str_wrd_array(char const *str, char const delim);
 char *my_strdup(char const *src);
+void *add_in_array(void *array, void *element);
 
 #endif

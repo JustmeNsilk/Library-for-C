@@ -5,7 +5,7 @@
 ** check if a number is num
 */
 
-#include "str.h"
+#include "define.h"
 
 int is_num(char const letter)
 {

@@ -6,7 +6,7 @@
 */
 
 #include "num.h"
-#include "str.h"
+#include "define.h"
 
 static
 int fetch_num(char const *str)

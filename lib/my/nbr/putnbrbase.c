@@ -7,6 +7,7 @@
 
 #include "num.h"
 #include "str.h"
+#include "define.h"
 
 int my_putnbr_base(int nb, char const *base)
 {

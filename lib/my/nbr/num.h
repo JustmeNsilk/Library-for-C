@@ -10,7 +10,6 @@
 
 //---INCLUDES---//
     #include <unistd.h>
-    #include "macro.h"
 
 ///---MACROS---///
     #define DECIMAL "0123456789"

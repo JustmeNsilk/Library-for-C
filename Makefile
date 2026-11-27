@@ -24,9 +24,9 @@ TEST_OBJ	=	$(TEST_SRC:.c=.o)
 
 #		-----------|		 FLAGS			|-----------
 
-CPPFLAGS	=	-I./include/ -g3
-
-CFLAGS	=	-Wall -Wextra
+CPPFLAGS	= "-I./include" $(shell find ./lib/my/ -mindepth 1 -type d -printf "-I./lib/my/%f/ ")
+ 
+CFLAGS	=	"-Wall" "-Wextra" "-g3"
 
 LDLIB	=	-L./lib/my/
 LMLIB	=	-lmy
@@ -46,7 +46,7 @@ TEST_NAME	=	unit_tests
 all:$(NAME)
 
 $(NAME):	$(OBJ)
-	make -C ./lib/my/ --no-print-directory --no-print-directory
+	make -C ./lib/my --no-print-directory
 	echo "> root : Compiling files..."
 	$(CC) $(LDLIB) -o $(NAME) $(OBJ) $(LMLIB)
 	echo "> root : [Done]"

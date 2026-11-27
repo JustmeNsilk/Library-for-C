@@ -5,6 +5,7 @@
 ** display one-by-one a character's string
 */
 
+#include "define.h"
 #include "str.h"
 
 int my_putstr(char const *str, int channel)
