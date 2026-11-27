@@ -73,7 +73,9 @@ re:	fclean all
 #		-----------|		 UNIT_TESTS			|-----------
 
 unit_tests: clean all
+	echo "> root : Compiling tests files executables..."
 	$(CC) -o $(TEST_NAME) $(TEST_SRC) $(CPPFLAGS) $(CRITERION) $(LDLIB) $(LMLIB)
+	echo "> root : [Done]"
 
 tests_run: unit_tests
 	./$(TEST_NAME)

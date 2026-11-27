@@ -5,6 +5,7 @@
 ** cpy_tests.c
 */
 
+#include "define.h"
 #include "crit.h"
 #include "str.h"
 

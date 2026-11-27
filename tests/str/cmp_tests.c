@@ -6,6 +6,7 @@
 */
 
 #include "crit.h"
+#include "define.h"
 #include "str.h"
 
 Test(utils, cmp_valid_test)

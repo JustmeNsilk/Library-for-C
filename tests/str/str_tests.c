@@ -5,6 +5,7 @@
 ** test_lib.c
 */
 
+#include "define.h"
 #include "crit.h"
 #include "str.h"
 
